@@ -16,7 +16,7 @@
 
 :root {
   --translate-skew: -50%;
-  --translate-y-img: 120px;
+  --translate-y-tablet: 120px;
 }
 
 /* styling and fixed rules */
@@ -38,7 +38,7 @@ header::before {
   content: "";
   position: absolute;
   background-color: hsl(94, 98%, 40%);
-  box-shadow: inset -5px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   height: 550px;
   left: 0;
   top: 0;
@@ -223,15 +223,47 @@ footer .bio-links {
   }
 
   header {
-    padding-top: calc(var(--translate-y-img) + 20px);
-    display: grid;
+    padding-top: calc(var(--translate-y-tablet) + 20px);
   }
 
   #bio {
-    justify-self: center;
-    display: block;
     padding: 15px 20px 20px 15px;
     width: clamp(400px, 80%, 600px);
+  }
+
+  #avatar {
+    width: 150px;
+    transform: scale(1.6);
+    transform-origin: bottom right;
+    margin: 0 20px 10px 0;
+  }
+
+  #bio p {
+    max-width: 100%;
+  }
+
+  header .bio-links {
+    margin-top: 10px;
+  }
+
+  #blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (min-width: 600px) {
+  main h1 {
+    text-align: initial;
+  }
+
+  header {
+    display: grid;
+    justify-items: center;
+  }
+
+  #bio {
+    display: block;
     background-color: hsl(0, 0%, 100%);
     box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
     border-radius: 20px;
@@ -239,10 +271,6 @@ footer .bio-links {
 
   #avatar {
     float: left;
-    width: 150px;
-    transform: scale(1.6);
-    transform-origin: bottom right;
-    margin: 0 20px 10px 0;
   }
 
   #bio h1 {
@@ -254,23 +282,10 @@ footer .bio-links {
     max-width: 100%;
   }
 
-  header .bio-links {
-    margin-top: 10px;
-  }
-
-  main h1 {
-    text-align: initial;
-  }
-
-  #blog-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
-
   footer {
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: clamp(20px, 8%, 80px);
   }
 
   footer address {
@@ -280,5 +295,48 @@ footer .bio-links {
   footer .bio-links {
     margin-top: 16px;
     justify-content: start;
+  }
+}
+
+@media (min-width: 1050px) {
+  body {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+
+  header {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
+
+  #bio {
+    padding: 20px 30px 30px;
+    max-width: 840px;
+  }
+
+  #avatar {
+    width: 180px;
+    transform: scale(1.7) translateY(8px);
+    transform-origin: right;
+    margin-right: 30px;
+  }
+
+  header .bio-links {
+    margin-top: 20px;
+    justify-content: right;
+  }
+
+  main {
+    padding: 40px 80px 60px;
+  }
+
+  #blog-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  footer {
+    gap: 80px;
   }
 }
