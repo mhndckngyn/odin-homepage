@@ -14,3 +14,197 @@
 	white-space: nowrap !important; /* 3 */
 }
 
+:root {
+  --translate-skew: -50%;
+}
+
+/* styling and fixed rules */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+header h1, main h1 {
+  font-size: 1.9rem;
+  color: hsl(94, 98%, 40%);
+}
+
+header {
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  background-color:  hsl(94, 98%, 40%);
+  height: 550px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: skewY(-10deg);
+  translate: 0 var(--translate-skew);
+  z-index: -1;
+}
+
+#bio > p {
+  color: hsl(0, 0%, 23%);
+}
+
+#avatar {
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+}
+
+.bio-links {
+  display: flex;
+  gap: 10px;
+}
+
+.post {
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+  text-decoration: none;
+
+  img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+  }
+   
+  & > div {
+    padding: 15px;
+  }
+
+  .title {
+    color: hsl(0, 0%, 0%);
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .description {
+    color: hsl(0, 0%, 50%);
+  }
+}
+
+footer {
+  background-color: hsl(0, 0%, 97%);
+}
+
+footer address {
+  font-style: normal;
+}
+
+footer h2 {
+  font-size: 1.6rem;
+}
+
+footer h2 + p {
+  font-style: italic;
+}
+
+footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* screen size-dependent */
+header, main, footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+header {
+  padding-top: 15px;
+}
+
+header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#bio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#bio h1 {
+  text-align: center;
+}
+
+#bio p {
+  max-width: 400px;
+}
+
+header .bio-links {
+  margin-top: -5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+main h1 {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#blog-list {
+  display: grid;
+  gap: 20px;
+  place-items: center;
+}
+
+.post {
+  max-width: 400px;
+   
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer address h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+footer address p {
+  text-align: center;
+}
+
+footer address ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+footer address li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+footer address li:nth-child(n + 1) {
+  margin-top: 5px;
+}
+
+footer .bio-links {
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
