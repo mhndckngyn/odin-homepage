@@ -1,17 +1,17 @@
 .sr-only {
   /* source: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
 
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
-	-webkit-clip-path: inset(50%) !important;
-		clip-path: inset(50%) !important;  /* 2 */
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important; /* 3 */
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
 }
 
 :root {
@@ -24,7 +24,8 @@ body {
   font-family: "Poppins", Arial, sans-serif;
 }
 
-header h1, main h1 {
+header h1,
+main h1 {
   font-size: 1.9rem;
   color: hsl(94, 98%, 40%);
 }
@@ -73,7 +74,7 @@ header::before {
     border-radius: 10px 10px 0 0;
     width: 100%;
   }
-   
+
   & > div {
     padding: 15px;
   }
@@ -121,7 +122,9 @@ footer address li:nth-child(n + 1) {
 }
 
 /* screen size-dependent */
-header, main, footer {
+header,
+main,
+footer {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -144,6 +147,7 @@ header > div {
 }
 
 #bio h1 {
+  margin-top: 5px;
   text-align: center;
 }
 
@@ -152,7 +156,6 @@ header > div {
 }
 
 header .bio-links {
-  margin-top: -5px;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -171,7 +174,7 @@ main h1 {
 #blog-list {
   display: grid;
   gap: 20px;
-  place-items: center;
+  justify-items: center;
 }
 
 .blog {
@@ -192,7 +195,7 @@ footer {
   padding-bottom: 20px;
 }
 
-footer address h2 {
+footer address {
   text-align: center;
 }
 
