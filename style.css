@@ -16,6 +16,7 @@
 
 :root {
   --translate-skew: -50%;
+  --translate-y-img: 120px;
 }
 
 /* styling and fixed rules */
@@ -35,8 +36,8 @@ header {
 header::before {
   content: "";
   position: absolute;
-  background-color:  hsl(94, 98%, 40%);
-  box-shadow: inset -5px 0px 20px 0px rgba(0,0,0,0.3);
+  background-color: hsl(94, 98%, 40%);
+  box-shadow: inset -5px 0px 5px 0px rgba(0, 0, 0, 0.3);
   height: 550px;
   left: 0;
   top: 0;
@@ -53,12 +54,13 @@ header::before {
 
 #avatar {
   border-radius: 20px;
-  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0px 0px 15px 0px hsla(0, 0%, 0%, 0.2);
 }
 
 .bio-links {
   display: flex;
   gap: 10px;
+  margin-top: 5px;
 }
 
 .blog {
@@ -172,9 +174,9 @@ main h1 {
   place-items: center;
 }
 
-.post {
-  max-width: 400px;
-   
+.blog {
+  max-width: 500px;
+
   & > div {
     display: flex;
     flex-direction: column;
@@ -192,11 +194,10 @@ footer {
 
 footer address h2 {
   text-align: center;
-  margin-bottom: 5px;
 }
 
-footer address p {
-  text-align: center;
+footer address h2 {
+  margin-bottom: 5px;
 }
 
 footer address ul {
@@ -204,18 +205,77 @@ footer address ul {
   margin-bottom: 10px;
 }
 
-footer address li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-footer address li:nth-child(n + 1) {
-  margin-top: 5px;
-}
-
 footer .bio-links {
   justify-content: center;
   margin-top: 12px;
   margin-bottom: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 1049px) {
+  header,
+  main,
+  footer {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  header {
+    padding-top: calc(var(--translate-y-img) + 20px);
+    display: grid;
+  }
+
+  #bio {
+    justify-self: center;
+    display: block;
+    padding: 15px 20px 20px 15px;
+    width: clamp(400px, 80%, 600px);
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+    border-radius: 20px;
+  }
+
+  #avatar {
+    float: left;
+    width: 150px;
+    transform: scale(1.6);
+    transform-origin: bottom right;
+    margin: 0 20px 10px 0;
+  }
+
+  #bio h1 {
+    text-align: initial;
+    margin-top: initial;
+  }
+
+  #bio p {
+    max-width: 100%;
+  }
+
+  header .bio-links {
+    margin-top: 10px;
+  }
+
+  main h1 {
+    text-align: initial;
+  }
+
+  #blog-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  footer address {
+    text-align: initial;
+  }
+
+  footer .bio-links {
+    margin-top: 16px;
+    justify-content: start;
+  }
 }
