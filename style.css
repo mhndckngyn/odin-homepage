@@ -15,8 +15,14 @@
 }
 
 :root {
-  --translate-skew: -50%;
-  --translate-y-tablet: 120px;
+  --shadow: hsla(0, 0%, 0%, 0.2);
+  --header-strip: hsl(94, 98%, 40%);
+  --bio-bg: hsl(0, 0%, 100%);
+  --heading: hsl(94, 98%, 40%);
+  --bio-desc: hsl(0, 0%, 23%);
+  --blog-title: hsl(0, 0%, 0%);
+  --blog-desc: hsl(0, 0%, 50%);
+  --footer-bg: hsl(0, 0%, 97%);
 }
 
 /* styling and fixed rules */
@@ -27,7 +33,7 @@ body {
 header h1,
 main h1 {
   font-size: 1.9rem;
-  color: hsl(94, 98%, 40%);
+  color: var(--heading);
 }
 
 header {
@@ -37,25 +43,25 @@ header {
 header::before {
   content: "";
   position: absolute;
-  background-color: hsl(94, 98%, 40%);
-  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  background-color: var(--header-strip);
+  box-shadow: inset 0px 0px 5px 0px var(--shadow);
   height: 550px;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   transform: skewY(-10deg);
-  translate: 0 var(--translate-skew);
+  translate: 0 -50%;
   z-index: -1;
 }
 
 #bio > p {
-  color: hsl(0, 0%, 23%);
+  color: var(--bio-desc);
 }
 
 #avatar {
   border-radius: 20px;
-  box-shadow: 0px 0px 15px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0px 0px 15px 0px var(--shadow);
 }
 
 .bio-links {
@@ -67,7 +73,8 @@ header::before {
 .blog {
   display: block;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.5);
+  transition: box-shadow 0.5s, transform 0.5s;
   text-decoration: none;
 
   img {
@@ -80,18 +87,23 @@ header::before {
   }
 
   .title {
-    color: hsl(0, 0%, 0%);
+    color: var(--blog-title);
     font-size: 1.3rem;
     font-weight: 500;
   }
 
   .description {
-    color: hsl(0, 0%, 50%);
+    color: var(--blog-desc);
   }
 }
 
+.blog:hover {
+  box-shadow: 3px 3px 30px 0px hsla(0, 0%, 0%, 0.25);
+  transform: translate(-5px -5px);
+}
+
 footer {
-  background-color: hsl(0, 0%, 97%);
+  background-color: var(--footer-bg);
 }
 
 footer address {
@@ -223,7 +235,7 @@ footer .bio-links {
   }
 
   header {
-    padding-top: calc(var(--translate-y-tablet) + 20px);
+    padding-top: 140px;
   }
 
   #bio {
@@ -264,8 +276,8 @@ footer .bio-links {
 
   #bio {
     display: block;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.2);
+    background-color: var(--bio-bg);
+    box-shadow: 0px 0px 10px 0px var(--shadow);
     border-radius: 20px;
   }
 
